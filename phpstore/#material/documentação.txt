@@ -1,0 +1,47 @@
+*Documentação* 
+
+->Dia 25/11/2021:
+-Tivemos o início do projeto
+#Criamos pastas material, core, public.
+-->material = onde guardaremos todas nossas descrições do php.
+-->core = criamos para guardar nossas classes.
+-->public = onde ficara nossa pág principal, conhecida como index.
+#No arquivo ('config.php') foi onde criamos nossas configurações necessárias para o arquivo, 
+como nome e versão que ele se encontra.
+#Arquivos como ('composer.json') e ('composer.lock') é onde carregamos todas as configs do nosso
+compossor, na qual é responsável por carregar a pastar vendor que nela vem carregada o arquivo 
+('autoload.php') que tem o intuito de carregar nossas classes
+
+->Dia 26/11/2021:
+#Na aba(config.php)definimos nossas configs com o banco de dados.
+-->Setamos o nome do banco, o nome da conexão, o user e ,por não possuir senha, não definimos.
+#Na aba (database.php) criamos uma variável de ligação e dois métodos, privados, de ligar e desligar a conexão.
+-->Ligar()
+-->Desligar()
+
+->Dia 01/12/2021:
+#No arquivo(database.php) definimos nossas public functions
+-->ligar() = fizemos nossas conexões com o banco de dados e definimos que ela é uma conexão persistent;
+@persistent = signifca dizer que a conexão vai continuar até mesmo depois da finalizão do script.
+@Definimos no settAttribute os modos pdo::attr_errmode e pdo::errmode_warning;
+%-->pdo::attr_errmode = onde ele envia relatórios de erros.
+%-->pdo::errmode_warning = ele da um aviso de erro, mas continua executando o script.
+-->desligar() = definimos que nossa variável ligação sera nula.
+-->select() = essa função vai dar o select no nosso database.
+-->insert() = responsável por inserir os dados.
+-->update() = responsável por atualizar um campo no database.
+-->delete() = responsável por deleter um campo no database.
+-->statement() = responsável por apagar todos os dados do database.
+#Criamos as pastas controller, views e criamos o arquivo router.
+-->controller = temos um arquivo chamado (main.php) na qual não fizemos nada.
+-->views criamos a pasta layout e o arquivo(paginicial.php) = na qual não possui nada:
+|-> temos nela (htmlfooter.php) e (htmlheader.php) = onde não possui nada por enquanto.
+-->Arquivo (router.php) = Demos início a configurações das nossas rotas;
+|->$router = nossas rotas;
+|->If vai estar verificando se o nosso campo possui "@";
+|->$partes = ele vai explodir "@" na variável $acao["$acao"];
+|->$controlador = ele vai pegar o caminho e transforma, a primeira letra da variável $parte no índice 0,
+em maiuscula;
+|->$metodo = vai pegar o que tiver na variável $partes[1];
+|->$qualquer = essa variável vai ta instanciando a variável $controlador e em seguida utiliza a variável
+$metodo como metodo.

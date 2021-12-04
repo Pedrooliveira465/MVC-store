@@ -1,0 +1,23 @@
+{
+    "name": "jose.sobreira/phpstore",
+    "description": "Loja_Online",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "JoseSobreira\\Phpstore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sobreira",
+            "email": "udreakjogos2@gmail.com"
+        }
+    ],
+    "require": {}, 
+    "autoload-dev": {
+        "psr-4": {
+            "core\\":"core/"
+        },
+        "files": ["config.php"]
+    }
+}
